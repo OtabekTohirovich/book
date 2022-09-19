@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 90%;
+    margin: auto;
+}
+a, li {
+    list-style: none;
+    text-decoration: none;
+}
+.nav__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'EB Garamond', serif;
+    font-size: larger;
+}
