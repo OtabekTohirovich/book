@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="hero__header">
@@ -19,9 +22,13 @@
                     <a href="./index.html">BADIIYAT</a>
                 </li>
                 
+ 
                 <div class="btn">
-                    <button class="nav__btn"> <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign in</button>
-                    <button class="nav__btn">Sign up</button>
+                    <a href="./signup.html">
+                    <button class="nav__btn nav__icons">Sign up  <i class="fa-solid fa-right-to-bracket"></i></button>
+                    </a>
+                    <button class="nav__btn">Sign in  <i class="fa-solid fa-person-walking-arrow-right"></i></button>
+                    
                 </div>
 
 
@@ -51,15 +58,13 @@
             <div class="search__part  search__pading">
                 <div class="search__title">
                     <p>Qidirish</p>
-                    <div class="search">
-                        <input type="search" placeholder="Adiblar, kitoblar, audiolar, maqolalar ...">
-                        <button class="nav__btn">
-                            
- 
- 
-                          <i class="fa-solid fa-magnifying-glass"></i> Izlash</button>
-                    </div>
                 </div>
+                <div class="search">
+                        <input class="input__search" type="search" placeholder="Adiblar, kitoblar, audiolar, maqolalar ..." name="search" id="search">
+                        <button type="submit" class="nav__btn">
+                            <i class="fa-solid fa-magnifying-glass"></i> Izlash</button>
+                </div>
+                
                 
             </div>
         </div>
