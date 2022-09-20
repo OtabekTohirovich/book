@@ -5,32 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <header class="hero__header">
+        <div class="container ">
             <nav class="nav__menu">
                 <li class="nav__title">
                     <a href="./index.html">BADIIYAT</a>
                 </li>
-                <li class="nav__imgmenu">
-                    <a href="#" class="nav__link">
-                        <img src="" alt="">
-                    </a>
-                    <a href="#" class="nav__link">
-                        <i class="fa-solid fa-angle-down"></i>
-                    </a>
-                </li>
+                
+                <div class="btn">
+                    <button class="nav__btn"> <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign in</button>
+                    <button class="nav__btn">Sign up</button>
+                </div>
 
 
             </nav>
         </div>
     </header>
+    <section class="hero">
+        <div class="container">
+            <div class="nav__category">
+                <li class="category__link">
+                    <a href="#" class="category__text">Bosh sahifa</a>
+                </li>
+                <li class="category__link">
+                    <a href="#" class="category__text">Nashr</a>
+                </li>
+                <li class="category__link">
+                    <a href="#" class="category__text">Nazm</a>
+                </li>
+                <li class="category__link">
+                    <a href="#" class="category__text">Maqolalar</a>
+                </li>
+                <li class="category__link">
+                    <a href="#" class="category__text">Forum</a>
+                </li>
+            </div>
+
+            <div class="search__part  search__pading">
+                <div class="search__title">
+                    <p>Qidirish</p>
+                    <div class="search">
+                        <input type="search" placeholder="Adiblar, kitoblar, audiolar, maqolalar ...">
+                        <button class="nav__btn">
+                            
+ 
+ 
+                          <i class="fa-solid fa-magnifying-glass"></i> Izlash</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
     <script src="./js/app.js"></script>
 </body>
