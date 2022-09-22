@@ -1,52 +1,52 @@
 *,
 *::after,
-*::before
- {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   
-
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+/* body {
+    background-image: url(../img/ornament.png);
+} */
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 .container {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
-a, li {
-    list-style: none;
-    text-decoration: none;
-    color: rgb(201, 172, 140);
-
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(201, 172, 140);
 }
 .nav__menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'EB Garamond', serif;
-    font-size: 2.5rem;
-    padding-top: 2rem;
-    padding-bottom: 1.3rem; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "EB Garamond", serif;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.3rem;
 }
 .hero__header {
-    border-bottom: .1rem solid rgb(48, 48, 48);
-    background-color: rgb(25, 25, 25);
+  border-bottom: 0.1rem solid rgb(48, 48, 48);
+  background-color: rgb(25, 25, 25);
 }
 .hero {
-    background: rgb(25, 25, 25);
+  background: rgb(25, 25, 25);
 }
 
 .nav__btn {
-    background-color: aliceblue;
-    color: rgb(201, 172, 140);
-    padding: .8rem 2.8rem;
-    border-radius: 1rem;
-    font-size: 1.6rem;
-    font-family: 'EB Garamond', serif;
-    font-weight: 600;
-    border: 0.2rem solid rgb(201, 172, 140);
+  background-color: aliceblue;
+  color: rgb(201, 172, 140);
+  padding: 0.8rem 2.8rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  font-family: "EB Garamond", serif;
+  font-weight: 600;
+  border: 0.2rem solid rgb(201, 172, 140);
 }
 /* 
 .nav__icons i:nth-child(1) {
@@ -54,75 +54,79 @@ a, li {
 } */
 
 .nav__btn:hover {
-    color: rgb(0, 0, 0);
-    background: rgb(201, 172, 140);
-    cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: rgb(201, 172, 140);
+  cursor: pointer;
 }
 .nav__title a:hover {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 /* header end */
 
-
 /* section hero */
-
 .hero {
-    height: 100vh;
-
+    background-image: url(/img/ornament.png);
+    background-repeat: no-repeat;
 }
 .nav__category {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20rem;
 }
 .nav__category li a {
-    color: rgb(184, 182, 182);
-    font-size: 2rem;
-    padding: 0 2.2rem;
+  color: rgb(184, 182, 182);
+  font-size: 2rem;
+  padding: 0 2.2rem;
 }
 .search__part {
-
-    color: rgb(201, 172, 140);
-    font-size: 3rem;
-    padding: 5rem 0;
-    border: .1rem solid rgb(25, 25, 25);
-    border-style: double;
-    border-radius: 2rem;
-    box-shadow: .4rem .1rem .8rem 1.2rem  rgb(23, 23, 23);
-    width: 85%;
-    margin: auto;
-    
+  color: rgb(201, 172, 140);
+  font-size: 3rem;
+  padding: 5rem 0;
+  border: 0.1rem solid rgb(25, 25, 25);
+  border-style: double;
+  border-radius: 2rem;
+  box-shadow: 0.4rem 0.1rem 0.8rem 1.2rem rgb(23, 23, 23);
+  width: 85%;
+  margin: auto;
 }
 
 .search__pading {
-    margin-top: 15rem;
+  margin-top: 15rem;
 }
 .input__search {
-    padding: .8rem 2.8rem;
-    font-size: 1.6rem;
-    width: 85%;
-    margin-right: 2rem;
-    border: .2rem solid rgb(201, 172, 140);
-    border-radius: 1rem;
-
+  padding: 0.8rem 2.8rem;
+  font-size: 1.6rem;
+  width: 85%;
+  margin-right: 2rem;
+  border: 0.2rem solid rgb(201, 172, 140);
+  border-radius: 1rem;
 }
 
 .search__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search {
-   padding: 0 10rem;
+  padding: 0 10rem;
 }
 
+/* books */
+.books {
+    display: flex;
+}
+.book {
+  /* width: 20%; */
+  margin: 2rem;
+  padding: 2rem;
+}
 
-
-
-
+.book .book_img {
+  width: 100%;
+}
 
 
 
