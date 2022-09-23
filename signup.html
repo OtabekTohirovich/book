@@ -18,38 +18,41 @@
 </head>
 <body>
     <section class="sign__upp">
+        <div class="container">
+            
+        </div>
         <div class="row ">
             <div class="col">
                 <div class="sign__upimg">
-                   <img width="100%" src="./img/Mobile login.gif" alt="">  
+                   <img width="100%" src="./img/Mobile login (1).gif" alt="">  
                 </div>
             </div>
-            <div class="col">
-                <h1>Sign up</h1>
-                <h4>Already have an account? <a href="signin.html">Sign In</a></h4>
+            <div class="col col__wrapper">
+                <h1 class="col__title">Sign up for ALL ...</h1>
+                    <p class="wrapper__tittle">Already have an account? <a href="signin.html">Sign In</a></p>
                 <form class="form__type">
     
-                    <p>
+                    <p class="input__location">
                         <label for="firstName">Firstname</label>
-                        <input class="input__disgn" type="text" name="firstName" id="firstName">
+                        <input class="input__disgn" placeholder="Reader FirstName" type="text" name="firstName" id="firstName">
                     </p>
-                    <p>
+                    <p class="input__location">
                         <label for="lastName">Lastname</label>
-                        <input class="input__disgn" type="text" name="lastName" id="lastName">
+                        <input class="input__disgn" placeholder="Reader LirstName" type="text" name="lastName" id="lastName">
                     </p>
-                    <p>
+                    <p class="input__location">
                         <label for="email">Email</label>
-                        <input class="input__disgn" type="email" name="email" id="email">
+                        <input class="input__disgn" placeholder="Reader email"  type="email" name="email" id="email">
                     </p>
-                    <p>
+                    <p class="input__location">
                         <label for="password">Password</label>
-                        <input class="input__disgn" type="password" name="password" id="password">
+                        <input class="input__disgn" placeholder="Password"  type="password" name="password" id="password">
                     </p>
-                    <p>
+                    <p class="input__location">
                         <label for="phone">Phone</label>
-                        <input class="input__disgn" type="tel" name="phone" id="phone">
+                        <input class="input__disgn" placeholder="Reader Phone"  type="tel" name="phone" id="phone">
                     </p>
-                    <p>
+                    <p class="input__location">
                         <label for="lang">Lang</label>
                         <input class="input__disgn" type="text" name="lang" id="lang">
                     </p>
@@ -57,15 +60,15 @@
                         <label for="role">Reader</label>
                         <input type="radio" name="role" id="reader" value="reader">
                         <label for="role">Author</label>
-                        <input type="radio" name="role" id="author" value="author">
+                        <input type="radio" name="role" id="author" value="author" class="authorss">
                     </p>
                     <br>
-                    <p>
-                        <label>You want to be Author?<a href="./signupauthor.html"> Click on!!!</a></label>
+                    <p class="author__value">
+                        
                     </p>
             
             
-                    <button class="nav__btn">sign up</button>
+                    <button class="signup__btn" onclick="loadingPage()">Sign up</button>
             
                 </form>
             
