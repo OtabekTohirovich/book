@@ -1,3 +1,4 @@
+// let database = [...parsedData()];
 document.addEventListener("DOMContentLoaded", (e) => {
   const page = location.pathname;
   console.log(page);
