@@ -5,20 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/signup.css">
 </head>
 <body>
-    <form name="Form" onsubmit="login()">
-        <p>
-            <label for="email">Email</label>
-            <input class="input__disgn" placeholder="Reader email"  type="email" name="email" id="email">
-        </p>
-        <p>
-            <label for="password">Password</label>
-            <input class="input__disgn" placeholder="Password"  type="password" name="password" id="password">
-        </p>
-
-        <button class="signup__btn" onclick="loadinggPage()">Sign in</button>
-    </form>
-        <script src="./js/signin.js"></script>
+    <section class="sign__upp">
+        <div class="container">
+            
+        </div>
+        <div class="row ">
+            <div class="col">
+                <div class="sign__upimg">
+                   <img width="100%" src="./img/Mobile login (1).gif" alt="">  
+                </div>
+            </div>
+            <div class="col col__wrapper">
+                <h1 class="col__title">Log in</h1>
+                <form class="form__type">
+                    <p class="input__location">
+                        <label for="email">Email</label>
+                        <input class="input__disgn" placeholder="People@gmail.com"  type="email" name="email" id="email">
+                    </p>
+                    <p class="input__location">
+                        <label for="password">Password</label>
+                        <input class="input__disgn" placeholder="Password"  type="password" name="password" id="password">
+                    </p>
+            
+                    <p>
+                        <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label></p>
+            
+                    <button class="signup__btn" >Log in</button>
+            
+                </form>
+            
+            </div>
+        </div>
+    </section>
+   
+    
+    <script src="./js/signin.js"></script>
 </body>
 </html>

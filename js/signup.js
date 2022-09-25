@@ -1,10 +1,9 @@
 // let database = [...parsedData()];
-
+const form = document.forms[0];
 document.addEventListener("DOMContentLoaded", (e) => {
   const page = location.pathname;
   console.log(page);
   if (page === "/signup.html" || page === "/signup") {
-    const form = document.forms[0];
     try {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -20,13 +19,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
         console.log(formData);
         signUprRequest(formData).then((data) => {
           console.log(data);
+          localStorage.token = data.token;
+          localStorage.user = JSON.stringify(data.user);
+          location.assign("/");
+        })
+        .catch((err) => {
+          console.log(err.msg);
+          if (err?.path) {
+            location.assign(err.path);
+          }
         });
       });
-    } catch (err) {
-      console.log(err);
+      } catch (err) {
+        console.log(err);
+     
     }
     async function signUprRequest(formData) {
-      const req = await fetch("https://bookzone-v2.herokuapp.com/api/sign-up", {
+      try {
+        const req = await fetch("https://bookzone-v2.herokuapp.com/api/sign-up", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,57 +44,32 @@ document.addEventListener("DOMContentLoaded", (e) => {
         body: JSON.stringify(formData),
       });
       const data = await req.json();
-      return data;
-    }
-    document.getElementById("author").addEventListener("click", function (event) {
-      if (event.target && event.target.matches("input[type='radio']")) {
-        event.preventDefault();
-        // do something here ...
-        const text = document.querySelector(".author__value");
-        text.innerHTML += `<label>You want to be Author?
-      <a href="./signupauthor.html"> Click on!!!
-      </a></label>`;
+      if (!req.ok) {
+        if (req.status === 404) {
+          throw { msg: "Iltimos to'g'ri manzilga so'rov jo'nating!" };
+        } else if (req.status === 403) {
+          // displaying "hm, what about no?"
+        } else if (req.status === 401) {
+          throw { msg: "Iltimos ro'yxatdan o'ting" };
+        } else {
+          // displaying "dunno what happened \_(ツ)_/¯"
+        }
+        if (data?.msg.startsWith("E11000")) {
+          throw {
+            msg: "Siz allaqochon ro'yhatdan o'tgansiz",
+            path: "/signin.html",
+          };
+        }
+        throw data;
       }
-    });
-  }
-
-  const form = document.forms[0];
-  if (page === "/signupauthor.html" || page === "/signupauthor") {
-    try {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const formData = new SignUpAuthor(
-          form.firstName.value,
-          form.lastName.value,
-          form.email.value,
-          form.password.value,
-          form.phone.value,
-          form.role.value,
-          form.date_of_birth.value
-        );
-        console.log(formData);
-        signUprRequest(formData).then((data) => {
-          console.log(data);
-        });
-        
-      });
-      
-    } catch (err) {
-      console.log(err);
-    }
-    async function signUprRequest(formData) {
-      const req = await fetch("https://bookzone-v2.herokuapp.com/api/sign-up", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await req.json();
       return data;
+      } catch (error){
+        throw error;
+      }
+      
     }
   }
-});
+})
 
 function SignUp(firstName, lastName, email, password, phone, lang, role) {
   try {
@@ -95,27 +80,6 @@ function SignUp(firstName, lastName, email, password, phone, lang, role) {
     this.phone = phone;
     this.lang = lang;
     this.role = role;
-  } catch (err) {
-    console.log(err);
-  }
-}
-function SignUpAuthor(
-  firstName,
-  lastName,
-  email,
-  password,
-  phone,
-  role,
-  date_of_birth
-) {
-  try {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.password = password;
-    this.phone = phone;
-    this.role = role || "author";
-    this.date_of_birth = date_of_birth;
   } catch (err) {
     console.log(err);
   }
@@ -132,12 +96,12 @@ function SignUpAuthor(
 //   </a></label>`;
 // }
 
-function loadingPage() {
-  const inputValue = document.querySelectorAll("input")
-  if(inputValue.values === "") {
-    prompt("bu juda yomon");
-  }
-  else {
-    window.location.assign("http://127.0.0.1:5500/index.html")
-  }
-}
+// function loadingPage() {
+//   const inputValue = document.querySelectorAll("input")
+//   if(inputValue.values === "") {
+//     prompt("bu juda yomon");
+//   }
+//   else {
+//     window.location.assign("http://127.0.0.1:5500/index.html")
+//   }
+// }
