@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    
     <header class="hero__header">
         <div class="container ">
             <nav class="nav__menu">
@@ -22,7 +23,7 @@
                     <a href="./index.html">BADIIYAT</a>
                 </li>
                 
- 
+                <div class="img__wrapper hide"></div>
                 <div class="btn">
                     <a href="./signup.html">
                     <button class="nav__btn nav__icons">Sign up  <i class="fa-solid fa-right-to-bracket"></i></button>
@@ -59,12 +60,13 @@
             </div>
 
             <div class="search__part  search__pading">
-                <div class="search__title">
-                    <p>Qidirish</p>
-                </div>
                 <div class="search">
-                        <input class="input__search" type="search" placeholder="Adiblar, kitoblar, audiolar, maqolalar ..." name="search" id="search">
-                        <button type="submit" class="nav__btn">
+                <label for="searchbox" class="search__title" >
+                    <p>Qidirish</p>
+                </label>
+                
+                        <input data-search class="input__search" type="search" placeholder="Adiblar, kitoblar, audiolar, maqolalar ..." name="search" id="searchbox">
+                        <button type="submit" class="nav__btn" id="searchb">
                             <i class="fa-solid fa-magnifying-glass"></i> Izlash</button>
                 </div>
                 
@@ -72,8 +74,33 @@
             </div>
         </div>
         <div class="container">
+            <div class="main__category">
+                <label class="category__title" >
+                    <p>ASOSIY KATEGORIYALAR</p>
+                </label>
+                <div class="category__link">
+                <li class="temuriylar">
+                    <a href="#">Temuriylar davri</a>
+                </li>
+                <li class="temuriylar">
+                    <a href="#">Jadid adabiyoti</a>
+                </li>
+                <li class="temuriylar">
+                    <a href="#">Sovet davri</a>
+                </li>
+                <li class="temuriylar">
+                    <a href="#">Mustaqillik davri</a>
+                </li>
+                <li class="adiblar temuriylar">
+                    <a href="#">Dunyo Adiblari</a>
+                </li></div>
+            </div>
             <div class="books">
            
+            </div>
+
+            <div class="authorss">
+                
             </div>
         </div>
     </section>
