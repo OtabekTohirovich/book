@@ -10,13 +10,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       auth__link.remove();
       img__wrapper.classList.remove("hide");
     }
-    getAuthorsRequest()
     getBooksRequest()
       .then((data) => {
         displayBooks(data.payload.docs);
         initializeBookEvent();
-        displayAuthors(data.payload.docs);
-        instializationAuthorsEvent();
       })
       .catch((err) => {
         console.log(err);
@@ -33,14 +30,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 
   if (page === "/authors.html" || page === "/authors") {
-    fetchById(
-      `https://bookzone-v2.herokuapp.com/api/authors`,
-      history.state.id
-    ).then((author) => {
-      console.log(author, "authors data from");
+    getAuthorsRequest()
+    .then((data) => {
+      displayAuthors(data.payload);
+      initializeAuthor()
+    })
+    .catch((err) => {
+      alert(err.message);
     });
   }
-
+  if (page === "/forauthers.html" || page === "/auth") {
+    fetchById("https://bookzone-v2.herokuapp.com/api/authors", history.state.id).then ((author) => {
+      console.log(author, "tftft");
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
   if (page === "/signin.html" || page === "/login") {
     const signInForm = document.querySelector(".signIn_form");
 
@@ -161,41 +166,46 @@ function initializeBookEvent() {
   });
 }
 
-function instializationAuthorsEvent() {
-  const authorMenuNode = document.querySelector(".authorss");
+function initializeAuthor() {
+  const authorMenuNode = document.querySelector(".author__parts");
+  console.log(authorMenuNode, "fjhjdfhjdhfjdhfjdhjfh");
   authorMenuNode.addEventListener("click", (event) => {
-    const id = event.target.closest(".authorr")?.dataset?.id;
-    console.log(id, "bosildi");
+    const id = event.target.closest(".author")?.dataset?.id;
     if (!id) return;
-    history.pushState({ id }, null, "/authors.html");
+    history.pushState({ id }, null, "/forauthers.html");
     location.reload();
   });
-}
+};
 
 function displayAuthors(data) {
   let result = "";
-  const authorMenuNode = document.querySelector(".authorss");
+  const authorMenuNode = document.querySelector(".author__parts");
   data.forEach((author) => {
-    result += `<div class="authorr" data-id="${author._id}">
-    <img width="100%" src="#" alt="Book Image" class="book_img" />
-    <h3>${author.author.firstName}</h3>
-    <h6>${author.author.lastName}</h6>
-    <img src="#" alt="Star" class="star" />
-  </div>`;
+    result += `
+    <div data-id="${author._id}" class="author">
+    <img src="./img/author.png" class="author_img" alt="author">
+    <h3>${author.firstName} ${author.lastName}</h3>
+    <p>${moment(author.date_of_birth).format('DD MMM YYYY')} ${author.date_of_death ? moment(author.date_of_death).format('DD MMM YYYY') : ""}</p>
+    <div class="author_logo">
+      <img src="img/book_author.png" alt="Book">
+      <span>34</span>
+      <img src="img/listener.png" alt="listener">
+      <span>34</span>
+    </div>
+  </div>
+      `;
   });
   authorMenuNode.innerHTML = result;
-}
+};
 
 const getAuthorsRequest = async () => {
   try {
-    const response = await fetch("https://bookzone-v2.herokuapp.com/api/authors");
+    const response = await fetch("https://bookzone-v2.herokuapp.com/api/authors/");
     if (!response.ok) {
       if (response.status === 404) {
         throw new Error("Iltimos to'g'ri manzilga so'rov jo'nating!");
       } else if (response.status === 403) {
-        // displaying "hm, what about no?"
       } else {
-        // displaying "dunno what happened \_(ツ)_/¯"
       }
       throw new Error(response);
     }
@@ -204,7 +214,7 @@ const getAuthorsRequest = async () => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 function displayBooks(data) {
   let result = "";
@@ -242,8 +252,6 @@ const getBooksRequest = async () => {
     throw error;
   }
 };
-
-
 
 
 const fetchById = async (url, id) => {
