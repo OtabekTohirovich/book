@@ -331,3 +331,93 @@ async function authRequest(url, formData) {
 //     <input class="input__disgn"  type="date" name="date_of_birth" id="date_of_birth">`
 //   }
 // });
+
+function displayBook(data) {
+  const book = data = data.book;
+  console.log(data);
+  let result = "";
+  const BookMenuNode = document.querySelector(".about_book .container");
+  result += `
+  <div class="container">
+  <div class="about_book_left">
+  <img src="./img/book.png" alt="Book Image">
+    </div>
+    <div class="about_book_right">
+        <h2>${book.title}</h2>
+        <h4>${book.author.firstName} ${book.author.lastName}  | <img class="about_book_right_star" src="./img/star.png" alt="Star"></h4>
+        <h3>Sahifalar Soni: ${book.pages}</h3>
+        <h3>Chop Etilgan: ${book.year}</h3>
+        <h3>Janri: ${book.category}</h3>
+        <h3>Nashriyot ${book.author.email}</h3>
+        <h4 class="about_book_right_h4">To'liq ma'lumot <img src="./img/Subtract.png" class="right_substract" alt="Substract"></h4>
+        <p>${book.description}</p>
+        <h4 class="book_format_h4">Mavjud formatlar</h4>
+        <div class="book_format">
+            <div class="card">
+            <img src="./img/book_author.png" alt="Book">
+            <h4>Qog'oz kitob</h4>
+            <span>${book.price} so'm</span>
+        </div>
+        <div class="card">
+            <img src="./img/listener.png" alt="listener">
+            <h4>Audiokitob</h4>
+            <span>${book.rate} soat</span>
+        </div>
+        <div class="card">
+            <img src="./img/phone.png" alt="Phone">
+            <h4>Elektron</h4>
+            <span>pdf, epub</span>
+        </div>
+        </div>
+        <button>Javonga qo'shish</button>
+    </div>
+</div>
+      `;
+  BookMenuNode.innerHTML = result;
+};
+
+
+
+function displayAuth(data) {
+  const book = data = data.book;
+  console.log(data);
+  let result = "";
+  const BookMenuNode = document.querySelector(".about_book .container");
+  result += `
+  <div class="container">
+  <div class="about_book_left">
+  <img src="./img/book.png" alt="Book Image">
+    </div>
+    <div class="about_book_right">
+        <h2>${book.title}</h2>
+        <h4>${book.author.firstName} ${book.author.lastName}  | <img class="about_book_right_star" src="./img/star.png" alt="Star"></h4>
+        <h3>Sahifalar Soni: ${book.pages}</h3>
+        <h3>Chop Etilgan: ${book.year}</h3>
+        <h3>Janri: ${book.category}</h3>
+        <h3>Nashriyot ${book.author.email}</h3>
+        <h4 class="about_book_right_h4">To'liq ma'lumot <img src="./img/Subtract.png" class="right_substract" alt="Substract"></h4>
+        <p>${book.description}</p>
+        <h4 class="book_format_h4">Mavjud formatlar</h4>
+        <div class="book_format">
+            <div class="card">
+            <img src="./img/book_author.png" alt="Book">
+            <h4>Qog'oz kitob</h4>
+            <span>${book.price} so'm</span>
+        </div>
+        <div class="card">
+            <img src="./img/listener.png" alt="listener">
+            <h4>Audiokitob</h4>
+            <span>${book.rate} soat</span>
+        </div>
+        <div class="card">
+            <img src="./img/phone.png" alt="Phone">
+            <h4>Elektron</h4>
+            <span>pdf, epub</span>
+        </div>
+        </div>
+        <button>Javonga qo'shish</button>
+    </div>
+</div>
+      `;
+  BookMenuNode.innerHTML = result;
+};
